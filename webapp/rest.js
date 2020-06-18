@@ -14,7 +14,7 @@ if (process.env['WEBAPP_NAMESERVERS'] == null || !process.env['WEBAPP_NAMESERVER
 }
 
 exports.defaultSOAValues = process.env['WEBAPP_SOA_DEFAULT'] != null
-	? process.env['WEBAPP_NAMESERVER_GROUP'].split(",")
+	? process.env['WEBAPP_SOA_DEFAULT'].split(",")
 	: [ 3600, exports.defaultNameservers[0], "hostmaster." + exports.defaultNameservers[0], 10800, 3600, 604800, 86400 ];
 
 if (exports.defaultSOAValues.length != 7) {
